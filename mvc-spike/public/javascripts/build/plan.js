@@ -1,18 +1,6 @@
 /**
  * Created by devika on 2/12/15.
  */
-//ReactDOM.render(
-//    <div id="plan">
-//        Hello
-//    </div>,
-//    document.getElementById('example')
-//);
-
-var loadPlan = function (context) {
-    $.get(context.props.url, (function (data) {
-        context.setState({plan: data});
-    }).bind(context));
-};
 
 //TODO: Another bad thing...see if template can be extracted out
 /*var planTemplate =
@@ -29,49 +17,40 @@ var loadPlan = function (context) {
  </div>
  ;*/
 
-var Plan = React.createClass({
+Plan = React.createClass({
     displayName: "Plan",
 
-    getInitialState: function () {
-        //TODO: Bad thing...see if can be changed
-        return {plan: {name: '', product: {}}};
-    },
-    componentDidMount: function () {
-        loadPlan(this);
-    },
     render: function () {
         return React.createElement(
             "div",
-            {className: "col-md-4"},
+            { className: "col-md-4" },
             React.createElement(
                 "div",
-                {id: "plan", className: "panel panel-default"},
+                { id: "plan", className: "panel panel-default" },
                 React.createElement(
                     "div",
-                    {className: "panel-heading"},
+                    { className: "panel-heading" },
                     React.createElement(
                         "h3",
-                        {className: "panel-title"},
-                        this.state.plan.name
+                        { className: "panel-title" },
+                        this.props.plan.name
                     )
                 ),
                 React.createElement(
                     "div",
-                    {className: "panel-body"},
+                    { className: "panel-body" },
                     React.createElement(
                         "div",
-                        {className: "col-md-6"},
-                        this.state.plan.product.name
+                        { className: "col-md-6" },
+                        this.props.plan.product.name
                     ),
                     React.createElement(
                         "div",
-                        {className: "col-md-6"},
-                        this.state.plan.product.value
+                        { className: "col-md-6" },
+                        this.props.plan.product.value
                     )
                 )
             )
         );
     }
 });
-
-ReactDOM.render(React.createElement(Plan, {url: "/plan"}), document.getElementById('example'));
