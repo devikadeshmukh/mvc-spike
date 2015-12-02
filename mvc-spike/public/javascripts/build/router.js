@@ -12,6 +12,7 @@ ReactDOM.render(React.createElement(
         Router,
         null,
         React.createElement(Route, {path: "/", component: App}),
-        React.createElement(Route, {path: "/change", component: Change})
+        React.createElement(Route, {path: "/change", component: Change}),
+        React.createElement(Route, {path: "/cart", component: Cart})
     )
 ), document.body);

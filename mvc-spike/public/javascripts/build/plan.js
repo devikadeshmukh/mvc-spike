@@ -23,7 +23,7 @@ Plan = React.createClass({
     render: function () {
         return React.createElement(
             "div",
-            { className: "col-md-4" },
+            null,
             React.createElement(
                 "div",
                 { id: "plan", className: "panel panel-default" },

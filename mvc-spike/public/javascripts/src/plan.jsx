@@ -19,7 +19,7 @@
 
 Plan = React.createClass({
     render: function () {
-        return ( <div className="col-md-4">
+        return ( <div>
             <div id="plan" className="panel panel-default">
                 <div className="panel-heading">
                     <h3 className="panel-title">{this.props.plan.name}</h3>
