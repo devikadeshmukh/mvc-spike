@@ -10,7 +10,7 @@ ReactDOM.render(
         <Router>
             <Route path="/" component={App}></Route>
             <Route path="/change" component={Change}></Route>
-            <Route path="/cart" component={Cart}></Route>
+            <Route path="/checkout" component={Checkout}></Route>
         </Router>
     </div>,
     document.body);

@@ -1,11 +1,7 @@
-Cart = React.createClass({
+Checkout = React.createClass({
     displayName: "Cart",
 
     render: function () {
-        return React.createElement(
-            "div",
-            null,
-            "Cart"
-        );
+        return React.createElement("div", null);
     }
 });

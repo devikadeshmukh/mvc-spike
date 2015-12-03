@@ -1,7 +1,12 @@
 Change = React.createClass({
     render: function () {
         return (
-            <PlanList url="/plans"></PlanList>
+            <div>
+                <div className="well">
+                    <CartIcon></CartIcon>
+                </div>
+                <PlanList url="/plans"></PlanList>
+            </div>
         );
     }
 });

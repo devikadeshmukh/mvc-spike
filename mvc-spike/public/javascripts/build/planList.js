@@ -7,33 +7,32 @@ var loadPlans = function (context) {
 };
 
 PlanList = React.createClass({
-    displayName: "PlanList",
+    displayName: 'PlanList',
 
     getInitialState: function () {
         //TODO: Bad thing...see if can be changed
-        return { plans: [] };
+        return {plans: [], status: 'initial'};
     },
     componentDidMount: function () {
         loadPlans(this);
     },
+    planAdded: function (id) {
+        EventMap.raise("addToCart");
+    },
     render: function () {
         var plans = this.state.plans.map(function (plan) {
-            return React.createElement(
-                "div",
-                {className: "col-md-4"},
-                React.createElement(Plan, {plan: plan}),
-                React.createElement(
-                    Link,
-                    {to: 'cart'},
-                    "Add to cart"
-                )
-            );
-        });
+            return React.createElement(PlanItem, {plan: plan, onPlanAdded: this.planAdded});
+        }, this);
 
         return React.createElement(
-            "div",
+            'div',
             null,
-            plans
+            plans,
+            React.createElement(
+                Link,
+                {to: 'checkout'},
+                'Checkout'
+            )
         );
     }
 });
