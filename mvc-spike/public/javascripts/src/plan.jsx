@@ -17,18 +17,22 @@
  </div>
  ;*/
 
+var getTemplate = function (context) {
+    return ( <div>
+        <div id="plan" className="panel panel-default">
+            <div className="panel-heading">
+                <h3 className="panel-title">{context.props.plan.name}</h3>
+            </div>
+            <div className="panel-body">
+                <div className="col-md-6">{context.props.plan.product.name}</div>
+                <div className="col-md-6">{context.props.plan.product.value}</div>
+            </div>
+        </div>
+    </div>)
+};
+
 Plan = React.createClass({
     render: function () {
-        return ( <div>
-            <div id="plan" className="panel panel-default">
-                <div className="panel-heading">
-                    <h3 className="panel-title">{this.props.plan.name}</h3>
-                </div>
-                <div className="panel-body">
-                    <div className="col-md-6">{this.props.plan.product.name}</div>
-                    <div className="col-md-6">{this.props.plan.product.value}</div>
-                </div>
-            </div>
-        </div>);
+        return getTemplate(this);
     }
 });
