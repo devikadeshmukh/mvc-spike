@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build": "babel --presets react public/javascripts/src/ --watch --out-dir public/javascripts/build/"
   },
   "dependencies": {
+    "babel-cli": "^6.3.17",
     "body-parser": "^1.14.1",
     "express": "~4.13.1"
   }
